@@ -1,0 +1,17 @@
+@import "../../node_modules/bootstrap/scss/functions";
+@import "./utils/variables";
+@import "../../node_modules/bootstrap";
+
+@import "./base/base";
+@import "./utils/utilities";
+
+// 以下為其他自定義 scss
+
+// layout
+@import "./layout/header";
+
+// components
+@import "./components/record/lately-content";
+
+// pages
+@import "./pages/record.scss";

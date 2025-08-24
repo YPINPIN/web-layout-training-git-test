@@ -1,0 +1,22 @@
+<header class="d-flex justify-content-center align-items-center header">
+  <!-- before link -->
+  <% if(beforeLink) { %>
+  <a href="<%= beforeLink %>" class="d-flex p-3"
+    ><img src="../assets/images/icons/before.svg" alt="before link icon"
+  /></a>
+  <% } else { %>
+  <div class="p-6 header-block"></div>
+  <% } %>
+
+  <!-- header title -->
+  <h1 class="fs-lh-5 fw-bold mx-auto header-title"><%= title %></h1>
+
+  <!-- next link -->
+  <% if(nextLink) { %>
+  <a href="<%= nextLink %>" class="d-flex p-3 disabled header-link"
+    ><img src="../assets/images/icons/next.svg" alt="next link icon"
+  /></a>
+  <% } else { %>
+  <div class="p-6 header-block"></div>
+  <% } %>
+</header>

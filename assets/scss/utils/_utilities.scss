@@ -1,0 +1,68 @@
+$utilities: map-merge(
+  $utilities,
+  (
+    "font-size":
+      map-merge(
+        map-get($utilities, "font-size"),
+        (
+          responsive: true,
+        )
+      ),
+    "line-height":
+      map-merge(
+        map-get($utilities, "line-height"),
+        (
+          responsive: true,
+          values:
+            map-merge(
+              map-get(map-get($utilities, "line-height"), "values"),
+              $line-heights
+            ),
+        )
+      ),
+    "rounded":
+      map-merge(
+        map-get($utilities, "rounded"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "rounded"), "values"),
+              (
+                xs: $border-radius-xs,
+              )
+            ),
+        )
+      ),
+  )
+);
+
+@each $fs-key, $fs-value in $font-sizes {
+  $lh-key: map-get($fs-to-lh, $fs-key);
+  $lh-value: map-get($line-heights, $lh-key);
+
+  // 標準 class（不含響應式）
+  .fs-lh-#{$fs-key} {
+    font-size: $fs-value !important;
+    line-height: $lh-value !important;
+  }
+}
+
+@each $fs-key, $fs-value in $font-sizes {
+  $lh-key: map-get($fs-to-lh, $fs-key);
+  $lh-value: map-get($line-heights, $lh-key);
+
+  // 響應式 class
+  @each $name, $breakpoint in $grid-breakpoints {
+    @if $name != xs {
+      // xs 通常是預設不帶斷點
+      @media (min-width: #{$breakpoint}) {
+        .fs-lh-#{$name}-#{$fs-key} {
+          font-size: $fs-value !important;
+          line-height: $lh-value !important;
+        }
+      }
+    }
+  }
+}
+
+@import "bootstrap/scss/utilities/api";

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>index</title>
+  </head>
+  <body>
+    <%- include('layout/header', { title: '前往日誌' , beforeLink: null ,
+    nextLink: './record.html'}) -%>
+
+    <div class="container">
+      <h2>基本樣式 .fs-lh-{level}</h2>
+      <div class="row">
+        <div class="col-8">
+          <h1 class="fs-lh-1">我是標題一 .fs-lh-1</h1>
+          <h2 class="fs-lh-2">我是標題二 .fs-lh-2</h2>
+          <h3 class="fs-lh-3">我是標題三 .fs-lh-3</h3>
+          <h4 class="fs-lh-4">我是標題四 .fs-lh-4</h4>
+          <h5 class="fs-lh-5">我是標題五 .fs-lh-5</h5>
+          <p class="fs-lh-6">我是內文1 .fs-lh-6</p>
+          <p class="fs-lh-7">我是內文2 .fs-lh-7</p>
+          <p class="fs-lh-8">我是內文3 .fs-lh-8</p>
+          <p class="fs-lh-9">說明文字 .fs-lh-9</p>
+        </div>
+        <div class="col-4">
+          對照表 <br />
+          $font-sizes: ( <br />
+          1: (48px, 64px),<br />
+          2: (36px, 48px),<br />
+          3: (32px, 40px),<br />
+          4: (24px, 32px),<br />
+          5: (20px, 28px),<br />
+          6: (18px, 28px),<br />
+          7: (16px, 24px),<br />
+          8: (14px, 20px),<br />
+          9: (12px, 16px) <br />
+          );
+        </div>
+      </div>
+      <br />
+      <h2>響應式 .fs-lh-{breakpoint}-{level}</h2>
+      <div class="row">
+        <div class="col-8">
+          <h1 class="fs-lh-2 fs-lh-md-1">.fs-lh-2 .fs-lh-md-1</h1>
+          <h2 class="fs-lh-3 fs-lh-md-2">.fs-lh-3 .fs-lh-md-2</h2>
+          <h3 class="fs-lh-4 fs-lh-md-3">.fs-lh-4 .fs-lh-md-3</h3>
+          <h4 class="fs-lh-5 fs-lh-md-4">.fs-lh-5 .fs-lh-md-4</h4>
+          <h5 class="fs-lh-6 fs-lh-md-5">.fs-lh-6 .fs-lh-md-5</h5>
+          <p class="fs-lh-7 fs-lh-md-6">.fs-lh-7 .fs-lh-md-6</p>
+          <p class="fs-lh-8 fs-lh-md-7">.fs-lh-8 .fs-lh-md-7</p>
+          <p class="fs-lh-9 fs-lh-md-8">.fs-lh-9 .fs-lh-md-8</p>
+          <p class="fs-lh-9">.fs-lh-9</p>
+        </div>
+        <div class="col-4">
+          對照表 <br />
+          $font-sizes: ( <br />
+          1: (48px, 64px),<br />
+          2: (36px, 48px),<br />
+          3: (32px, 40px),<br />
+          4: (24px, 32px),<br />
+          5: (20px, 28px),<br />
+          6: (18px, 28px),<br />
+          7: (16px, 24px),<br />
+          8: (14px, 20px),<br />
+          9: (12px, 16px) <br />
+          );
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="../main.js"></script>
+  </body>
+</html>

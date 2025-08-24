@@ -1,0 +1,54 @@
+.record-lately {
+  &-list {
+    gap: 5px;
+
+    &-item {
+      flex: 1;
+    }
+  }
+  &-tab.btn {
+    padding: 5px;
+    background-color: $neutral-800;
+    &:hover,
+    &:active,
+    &.active {
+      background-color: $primary-700;
+      border-color: $primary-300;
+    }
+  }
+}
+
+// icon
+.icon-16 {
+  width: 16px;
+  height: 16px;
+}
+
+.icon-20 {
+  width: 20px;
+  height: 20px;
+}
+
+// chart
+.chart-height {
+  height: 192px;
+  &-2 {
+    height: 144px;
+  }
+}
+
+// tooltip
+.custom-tooltip {
+  --bs-tooltip-bg: #c5cccb; //$neutral-400;
+  --bs-tooltip-color: #15312f; //$neutral-1000;
+  // --bs-tooltip-font-size: 16px;
+  --bs-tooltip-padding-x: 12px;
+  --bs-tooltip-padding-y: 8px;
+  --bs-tooltip-border-radius: 4px;
+  --bs-tooltip-margin: 4px;
+  --bs-tooltip-arrow-width: 0px;
+  --bs-tooltip-arrow-height: 0px;
+
+  font-size: 16px;
+  line-height: 1;
+}
