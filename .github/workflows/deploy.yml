@@ -34,11 +34,21 @@ jobs:
       - name: Build project
         run: npm run build
 
-      # 6. Deploy
-      - name: Deploy to GitHub Pages
+      # 6a. Deploy develop 分支到另一個 repo（preview）
+      - name: Deploy preview (develop branch)
+        if: github.ref == 'refs/heads/develop'
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ github.ref == 'refs/heads/develop' && secrets.PERSONAL_ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           publish_dir: ./dist
           publish_branch: gh-pages
-          destination_repo: ${{ github.ref == 'refs/heads/develop' && 'YPINPIN/web-layout-training-git-test-preview' || '' }}
+          repository: YPINPIN/web-layout-training-git-test-preview
+
+      # 6b. Deploy main 分支到自己 repo
+      - name: Deploy production (main branch)
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
