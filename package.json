@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "vite build && gh-pages -d dist"
+    "deploy:main": "npm run build && gh-pages -d dist -b gh-pages",
+    "deploy:dev": "npm run build && gh-pages -d dist -b gh-pages-dev"
   },
   "devDependencies": {
     "ejs": "^3.1.9",
