@@ -1,4 +1,4 @@
-name: Deploy Vite App
+name: Deploy GitHub Pages
 
 on:
   push:
@@ -36,7 +36,7 @@ jobs:
 
       # 6. Deploy
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v6
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ github.ref == 'refs/heads/develop' && secrets.PERSONAL_ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
