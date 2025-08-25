@@ -22,10 +22,16 @@ function moveOutputPlugin() {
   };
 }
 
+// 依照 DEPLOY_ENV 判斷 base
+const repoName =
+  process.env.DEPLOY_ENV === "develop"
+    ? "web-layout-training-git-test-preview" // develop 分支部署到另一個 repo
+    : "web-layout-training-git-test"; // main 分支部署到自己 repo
+
 export default defineConfig({
   // base 的寫法:
   // base: '/Repository 的名稱/'
-  base: "/web-layout-training-aapd-demo/",
+  base: `/${repoName}/`,
   plugins: [
     liveReload(["./layout/**/*.ejs", "./pages/**/*.ejs", "./pages/**/*.html"]),
     ViteEjsPlugin(),
