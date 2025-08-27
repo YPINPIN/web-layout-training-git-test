@@ -30,5 +30,8 @@
   // === 檔案處理習慣 ===
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
-  "files.eol": "\n" // 強制 LF 換行
+  "files.eol": "\n",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  } // 強制 LF 換行
 }
